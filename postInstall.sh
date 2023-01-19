@@ -1,6 +1,6 @@
 #Update
 sudo apt update && apt
-sudo apt install ssh curl vim
+sudo apt install ssh curl vim git pip make python3
 #Instala a fonte Firacode
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.0/FiraCode.zip   
 unzip FiraCode.zip   
@@ -31,3 +31,16 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl 
 source <(kubectl completion bash) configura
 echo "source <(kubectl completion >>
+#Instala o Neovim
+LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s 
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb   
+sudo apt install ./nvim-linux64.deb 
+#Instala o NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" &&
+[ -s "$NVM_DIR/nvm.sh" ] \.
+nvm install v18.13.0  
+#Instala o Rust
+curl https://sh.rustup.rs -sSf | 
+LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s 
+export PATH=/home/thiago733/.local/bin:$PATH   
